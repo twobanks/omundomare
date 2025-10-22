@@ -1,2 +1,2 @@
 export const NAME = '🌞 MARÎ BRAÑDZ’ | Tarot & Astrologia'; 
-export const WHATSAPP = '5534988481807'
+export const WHATSAPP = '5534988821607'

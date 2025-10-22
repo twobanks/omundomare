@@ -134,6 +134,7 @@ const navLinks = [
       { name: 'Todos os atendimentos', href: '/atendimentos' },
     ]
   },
+  { name: 'Agende seu horário', href: '/agenda' },
 ]
 
 const dadosAtendimento = {

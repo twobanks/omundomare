@@ -1,5 +1,5 @@
 import React from 'react'
-import { Roboto, Anton, Satisfy } from 'next/font/google'
+import { Roboto, Satisfy } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
