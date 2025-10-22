@@ -18,7 +18,8 @@ const config = {
         'brand-yellow-dark': '#EAB308', // (yellow-500) Para o "hover" do botão
       },
       fontFamily: {
-        serif: ['var(--font-roboto)', 'serif'],
+        sans: ['var(--font-roboto)', 'sans-serif'],
+        serif: ['var(--font-anton)', 'serif'],
       },
     },
   },

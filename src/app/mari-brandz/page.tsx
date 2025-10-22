@@ -15,7 +15,7 @@ export default function QuemSomosPage() {
       <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
         <Image src="/images/bg_tarot.jpg" alt="Galáxia com tons de roxo e azul" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50"  />
         <div className="z-10 p-4 text-brand-white">
-          <h1 className="font-serif text-5xl font-bold uppercase tracking-widest"> A Marî Brañdz` </h1>
+          <h1 className="font-serif text-5xl font-bold tracking-widest"> A Marî Brañdz` </h1>
           <p className="mt-4 text-xl md:text-2xl"> Artista, Astróloga, Taróloga e Terapeuta Holística. </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function QuemSomosPage() {
       </section>
       <section className="bg-brand-yellow-dark py-20">
         <div className="container mx-auto max-w-5xl px-6 lg:px-8">
-          <h2 className="mb-16 text-center font-serif text-4xl font-bold uppercase tracking-wider text-brand-white">
+          <h2 className="mb-16 text-center font-serif text-4xl font-bold tracking-wider text-brand-white">
             Minhas Ferramentas
           </h2>
           <div className="grid grid-cols-2 gap-8 text-center text-gray-200 md:grid-cols-4">

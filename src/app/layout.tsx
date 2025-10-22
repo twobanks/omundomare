@@ -1,13 +1,18 @@
 import React from 'react'
-import { Roboto_Serif } from 'next/font/google'
+import { Roboto, Anton, Satisfy } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-const roboto = Roboto_Serif({
+const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
   weight: ['400', '700'],
+})
+
+const anton = Satisfy({
+  weight: ['400'], 
+  variable: '--font-anton', 
 })
 
 export const metadata = {
@@ -17,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br" className={`${roboto.variable} `} suppressHydrationWarning={true}>
+    <html lang="pt-br" className={`${roboto.variable} ${anton.variable}`} suppressHydrationWarning={true}>
       <body className="font-sans bg-brand-bg text-brand-text">
         <Navbar />
         <main>{children}</main>

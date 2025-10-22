@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative flex h-[90vh] min-h-[300px] items-center justify-center text-center">
         <Image src="/images/bg-hero.jpg" alt="Galáxia com tons de roxo e azul" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50" />
         <div className="z-10 flex flex-col items-center px-4">
-          <h1 className="font-serif text-5xl font-bold uppercase tracking-widest text-white md:text-7xl">
+          <h1 className="font-serif text-5xl font-bold tracking-widest text-white md:text-7xl">
             Desvende seu Caminho
           </h1>
           <p className="mt-4 max-w-2xl text-xl text-white md:text-2xl">
@@ -27,7 +27,7 @@ export default function Home() {
             <Image src="/images/mari.jpg" alt="Foto de Marî Brañdz" width={500} height={500} objectFit="cover" className="rounded-lg shadow-2xl" />
           </div>
           <div>
-            <h2 className="font-serif text-4xl font-bold uppercase tracking-wider text-yellow-500">
+            <h2 className="font-serif text-4xl font-bold tracking-wider text-yellow-500">
               Prazer, eu sou a Marî Brañdz
             </h2>
             <p className="mt-6 text-lg text-brand-text-muted">
@@ -44,7 +44,7 @@ export default function Home() {
       </section>
       <section className="bg-brand-bg py-20 md:py-32"> 
         <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="mb-16 text-center font-serif text-4xl font-bold uppercase tracking-wider text-violet-500">
+          <h2 className="mb-16 text-center font-serif text-4xl font-bold tracking-wider text-violet-500">
             Principais Atendimentos
           </h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">

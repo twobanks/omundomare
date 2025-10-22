@@ -10,7 +10,7 @@ export default function ReikiPage() {
       <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
         <Image src="/images/bg-mapa-astral.jpg"  alt="Mapa Astral e Zodíaco" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50" />
         <div className="z-10 p-4 text-brand-white">
-          <h1 className="font-serif text-5xl font-bold uppercase tracking-widest">
+          <h1 className="font-serif text-5xl font-bold tracking-widest">
             Reiki
           </h1>
           <p className="mt-4 text-xl md:text-2xl">
@@ -40,7 +40,7 @@ export default function ReikiPage() {
       </section>
       <section className="bg-gray-900 py-20">
         <div className="container mx-auto max-w-5xl px-6 lg:px-8">
-          <h2 className="mb-16 text-center font-serif text-4xl font-bold uppercase tracking-wider text-brand-text">
+          <h2 className="mb-16 text-center font-serif text-4xl font-bold tracking-wider text-brand-text">
             O que você pode sentir
           </h2>
           <div className="grid grid-cols-1 gap-10 text-center text-brand-text md:grid-cols-3">

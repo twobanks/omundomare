@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { FaInstagram, FaTiktok, FaTwitter, FaFacebook, FaYoutube, FaBars, FaTimes, FaWhatsapp, FaChevronDown } from 'react-icons/fa'
 import { navLinks } from '@/utils/dados'
 import { WHATSAPP } from '@/utils/const'
+import { usePathname } from 'next/navigation'
 
 const socialLinks = [
   { icon: <FaInstagram />, href: 'https://www.instagram.com/omundomare/' },
@@ -19,7 +20,7 @@ const socialLinks = [
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [openMobileSubMenu, setOpenMobileSubMenu] = useState(false)
-
+  const pathname = usePathname()
   return (
     <header className="sticky py-5 top-0 z-50 relative bg-cover bg-center" style={{ backgroundImage: "url('/images/bg-mapa-astral.jpg')" }}>
       <div className="absolute inset-0 bg-black/75 -z-10"></div>
@@ -35,7 +36,14 @@ export default function Navbar() {
               link.subMenu ? (
                 <div key={link.name} className="relative group">
                   <span
-                    className="px-2 py-1 text-sm font-medium uppercase tracking-wider text-brand-lilac-light hover:text-brand-yellow-dark cursor-pointer flex items-center"
+                    className={`
+                      px-2 py-1 text-sm font-medium uppercase tracking-wider cursor-pointer flex items-center
+                      hover:text-brand-yellow-dark
+                      ${pathname.startsWith(link.href) 
+                        ? 'text-brand-yellow' 
+                        : 'text-brand-lilac-light' 
+                      }
+                    `}
                   >
                     {link.name}
                     <FaChevronDown className="ml-1 h-3 w-3" />
@@ -47,7 +55,14 @@ export default function Navbar() {
                         <Link
                           key={subLink.name}
                           href={subLink.href}
-                          className="block px-4 py-2 text-sm uppercase tracking-wider text-brand-lilac-light hover:bg-gray-800 hover:text-brand-yellow-dark"
+                          className={`
+                            block px-4 py-2 text-sm uppercase tracking-wider 
+                            hover:bg-gray-800 hover:text-brand-yellow-dark
+                            ${pathname === subLink.href 
+                              ? 'text-brand-yellow' 
+                              : 'text-brand-lilac-light' 
+                            }
+                          `}
                           role="menuitem"
                         >
                           {subLink.name}
@@ -60,7 +75,14 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="px-2 py-1 text-sm font-medium uppercase tracking-wider text-brand-lilac-light hover:text-brand-yellow-dark"
+                  className={`
+                    px-2 py-1 text-sm font-medium uppercase tracking-wider 
+                    hover:text-brand-yellow-dark
+                    ${pathname === link.href 
+                      ? 'text-brand-yellow' 
+                      : 'text-brand-lilac-light' 
+                    }
+                  `}
                 >
                   {link.name}
                 </Link>
@@ -87,7 +109,14 @@ export default function Navbar() {
                 <div key={link.name}>
                   <button
                     onClick={() => setOpenMobileSubMenu(!openMobileSubMenu)}
-                    className="w-full flex justify-between items-center rounded-md px-3 py-2 text-base font-medium uppercase tracking-wider text-brand-text-muted hover:bg-gray-100 hover:text-brand-lilac"
+                    className={`
+                      w-full flex justify-between items-center rounded-md px-3 py-2 text-base 
+                      font-medium uppercase tracking-wider hover:bg-gray-100 hover:text-brand-lilac
+                      ${pathname.startsWith(link.href) 
+                        ? 'text-brand-yellow'
+                        : 'text-brand-text-muted'
+                      }
+                    `}
                   >
                     <span>{link.name}</span>
                     <FaChevronDown className={`h-4 w-4 transform transition-transform ${openMobileSubMenu ? 'rotate-180' : 'rotate-0'}`} />
@@ -98,8 +127,15 @@ export default function Navbar() {
                         <Link
                           key={subLink.name}
                           href={subLink.href}
-                          onClick={() => setIsMobileMenuOpen(false)} 
-                          className="block rounded-md px-3 py-2 text-base font-medium uppercase tracking-wider text-brand-text-muted hover:bg-gray-100 hover:text-brand-lilac"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`
+                            block rounded-md px-3 py-2 text-base font-medium uppercase 
+                            tracking-wider hover:bg-gray-100 hover:text-brand-lilac
+                            ${pathname === subLink.href 
+                              ? 'text-brand-yellow'
+                              : 'text-brand-text-muted'
+                            }
+                          `}
                         >
                           {subLink.name}
                         </Link>
@@ -112,7 +148,14 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block rounded-md px-3 py-2 text-base font-medium uppercase tracking-wider text-brand-text-muted hover:bg-gray-100 hover:text-brand-lilac"
+                  className={`
+                    block rounded-md px-3 py-2 text-base font-medium uppercase 
+                    tracking-wider hover:bg-gray-100 hover:text-brand-lilac
+                    ${pathname === link.href 
+                      ? 'text-brand-yellow'
+                      : 'text-brand-text-muted' 
+                    }
+                  `}
                 >
                   {link.name}
                 </Link>

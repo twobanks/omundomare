@@ -124,8 +124,9 @@ const navLinks = [
   { name: 'INÍCIO', href: '/' },
   { name: 'A MARI Brañdz', href: '/mari-brandz' },
   { name: 'Vídeos', href: '/videos' },
+  { name: 'Podcast', href: '/podcast' },
   {
-    name: 'Atendimentos',
+    name: 'Atendimentos', href: '/atendimentos',
     subMenu: [
       { name: 'Mapa Astral', href: '/atendimentos/mapa-astral' },
       { name: 'Reiki', href: '/atendimentos/reiki' },

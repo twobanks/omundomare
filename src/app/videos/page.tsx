@@ -21,14 +21,11 @@ export default async function VideosPage() {
   const videos = await getYouTubeVideos()
   return (
     <>
-      <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center overflow-hidden bg-brand-lilac-light">
-        <div className="z-10 p-4">
-          <h1 className="font-serif text-5xl font-bold uppercase tracking-widest text-brand-text">
-            Vídeos
-          </h1>
-          <p className="mt-4 text-xl text-brand-text-muted md:text-2xl">
-            Conteúdo sobre Astrologia, Tarot e Espiritualidade.
-          </p>
+      <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
+        <Image src="/images/mapa-astral.webp" alt="Galáxia com tons de roxo e azul" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50"  />
+        <div className="z-10 p-4 text-brand-white">
+          <h1 className="font-serif text-5xl font-bold tracking-widest"> Vídeos </h1>
+          <p className="mt-4 text-xl md:text-2xl"> Conteúdo sobre Astrologia, Tarot e Espiritualidade. </p>
         </div>
       </section>
       <section className="bg-brand-white py-20 md:py-24">
@@ -51,7 +48,7 @@ export default async function VideosPage() {
                     <Image src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} layout="fill" objectFit="cover"/>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-serif text-xl font-bold text-brand-text hover:text-brand-lilac">
+                    <h3 className="font-sans text-md font-bold text-brand-text hover:text-brand-lilac">
                       {video.snippet.title}
                     </h3>
                   </div>
