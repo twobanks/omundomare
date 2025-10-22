@@ -30,3 +30,16 @@ export type YouTubeVideoItem = {
     }
   }
 }
+
+export type SpotifyEpisode = {
+  id: string
+  name: string
+  description: string
+  release_date: string
+  images: {
+    url: string
+  }[]
+  external_urls: {
+    spotify: string
+  }
+}
