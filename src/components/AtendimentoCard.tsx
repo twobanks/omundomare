@@ -7,10 +7,10 @@ export default function CardAtendimento({ dados } : { dados: { titulo: string; t
     return(
         <section className="bg-brand-white py-24 text-center">
             <div className="container mx-auto max-w-3xl px-6 lg:px-8">
-            <h2 className="font-serif text-4xl font-bold tracking-wider text-brand-text-muted">
+            <h2 className="font-serif text-5xl font-bold tracking-wider text-brand-yellow-dark">
                 {dados.titulo}
             </h2>
-            <p className="mt-4 text-xl text-brand-text">
+            <p className="mt-4 text-lg text-brand-text">
                 {dados.texto}
             </p>
             <Link href={urlWhatsapp} target="_blank" className="mt-8 inline-block rounded-full border-2 bg-brand-yellow-dark px-12 py-3 text-lg font-bold uppercase tracking-wider text-brand-white transition-colors hover:bg-brand-text hover:text-white">

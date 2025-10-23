@@ -51,8 +51,7 @@ export default async function PodcastPage() {
       <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
         <Image src="/images/mapa-astral.webp" alt="Galáxia com tons de roxo e azul" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50"  />
         <div className="z-10 p-4 text-brand-white">
-          <h1 className="font-serif text-5xl font-bold tracking-widest"> Entregando o Ouro </h1>
-          <p className="mt-4 text-xl md:text-2xl"> Meu intuito é desvendar o oculto para você ter um dia a dia com mais leveza e conexão consigo MESMO ✨ </p>
+          <h1 className="font-serif text-6xl font-bold tracking-widest"> Entregando o Ouro </h1>
         </div>
       </section>
       <section className="bg-brand-white py-20 md:py-24">

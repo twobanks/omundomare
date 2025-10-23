@@ -9,6 +9,11 @@ const config = {
     extend: {
       colors: {
         'brand-white': '#FFFFFF',
+        'brand-brown': '#70311D',
+        'brand-blue': '#45A9BF',
+        'brand-blue-light': '#D1F2EF',
+        'brand-green': '#7F9E59',
+        'brand-green-light': '#D6EDAE',
         'brand-bg': '#F9FAFB', // Um branco "off-white" (gray-50) para fundos de seção
         'brand-text': '#1F2937', // (gray-800) Cor principal do texto
         'brand-text-muted': '#4B5563', // (gray-600) Cor de texto secundária

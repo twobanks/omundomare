@@ -13,7 +13,7 @@ export default function AtendimentosPage() {
       <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
         <Image src="/images/bg-mapa-astral.jpg"  alt="Mapa Astral e Zodíaco" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50" />
         <div className="z-10 p-4 text-white">
-          <h1 className="font-serif text-5xl font-bold tracking-widest">
+          <h1 className="font-serif text-6xl font-bold tracking-widest">
             Atendimentos
           </h1>
           <p className="mt-4 text-xl text-gray-200 md:text-2xl">

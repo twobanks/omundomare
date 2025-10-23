@@ -121,7 +121,7 @@ const servicosBeleza: Servico[] = [
 const categories = ['Terapias Holísticas', 'Serviços de Beleza']
 
 const navLinks = [
-  { name: 'INÍCIO', href: '/' },
+  /* { name: 'INÍCIO', href: '/' }, */
   { name: 'A MARI Brañdz', href: '/mari-brandz' },
   { name: 'Vídeos', href: '/videos' },
   { name: 'Podcast', href: '/podcast' },

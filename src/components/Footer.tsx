@@ -15,17 +15,13 @@ export default function Footer() {
   const dataAtual = new Date();
   const anoAtual = dataAtual.getFullYear();
   return (
-    <footer
-      className="border-t border-gray-200 py-8 px-8 text-brand-white flex items-center justify-between relative bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/bg-mapa-astral.jpg')" }} 
-    >
-      <div className="absolute inset-0 bg-black/75"></div>
-      <div className="text-sm text-brand-white relative">
+    <footer className="border-t border-gray-200 py-8 px-8 text-brand-white flex items-center justify-between relative bg-black">
+      <div className="text-sm relative">
         <p className="text-brand-white">{NAME} © {anoAtual}</p>
       </div>
       <div className="hidden md:flex md:items-center md:space-x-4 relative">
         {socialLinks.map((social) => (
-          <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="text-brand-white hover:text-brand-lilac">
+          <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="text-brand-white hover:text-brand-blue">
             {social.icon}
           </a>
         ))}
