@@ -21,7 +21,7 @@ export default function AtendimentosPage() {
           </p>
         </div>
       </section>
-      <section className="bg-brand-bg py-20">
+      <section className="bg-brand-contact py-20">
         <div className="container mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 flex justify-center space-x-4">
             {categories.map((category) => (

@@ -18,7 +18,7 @@ export default function MapaAstralPage() {
           </p>
         </div>
       </section>
-      <section className="bg-brand-white py-20 md:py-24">
+      <section className="bg-brand-contact py-20 md:py-24">
         <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 lg:px-8">
           <div className="text-left">
             <h2 className="font-serif text-5xl font-bold tracking-wider text-brand-blue">
@@ -34,7 +34,7 @@ export default function MapaAstralPage() {
             </div>
           </div>
           <div className="w-full">
-            <Image src="/images/bg-hero.jpg" alt="Símbolos do Zodíaco" width={500} height={500} objectFit="cover" className="rounded-lg shadow-2xl" />
+            <Image src="/images/Support.png" alt="Símbolos do Zodíaco" width={500} height={500} objectFit="cover" />
           </div>
         </div>
       </section>

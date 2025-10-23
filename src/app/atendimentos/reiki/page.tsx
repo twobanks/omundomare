@@ -18,10 +18,10 @@ export default function ReikiPage() {
           </p>
         </div>
       </section>
-      <section className="bg-brand-white py-20 md:py-24">
+      <section className="bg-brand-contact py-20 md:py-24">
         <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 lg:px-8">
           <div className="w-full">
-            <Image src="/images/bg-reiki.jpg" alt="Mãos em posição de cura Reiki" width={500} height={500} objectFit="cover" className="rounded-lg shadow-2xl" />
+            <Image src="/images/Main-Banner.png" alt="Mãos em posição de cura Reiki" width={500} height={500} objectFit="cover" />
           </div>
           <div className="text-left">
             <h2 className="font-serif text-5xl font-bold tracking-wider text-brand-blue">

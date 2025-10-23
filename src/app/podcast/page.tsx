@@ -54,7 +54,7 @@ export default async function PodcastPage() {
           <h1 className="font-serif text-6xl font-bold tracking-widest"> Entregando o Ouro </h1>
         </div>
       </section>
-      <section className="bg-brand-white py-20 md:py-24">
+      <section className="bg-brand-contact py-20 md:py-24">
         <div className="container mx-auto max-w-7xl px-6 lg:px-8">
           {episodes.length === 0 ? (
             <p className="text-center text-lg text-brand-text-muted">

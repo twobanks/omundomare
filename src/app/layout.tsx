@@ -1,5 +1,5 @@
 import React from 'react'
-import { Roboto, Satisfy } from 'next/font/google'
+import { Roboto, Satisfy, Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -7,6 +7,12 @@ import Footer from '@/components/Footer'
 const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
+  weight: ['400', '700'],
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
   weight: ['400', '700'],
 })
 
@@ -22,7 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br" className={`${roboto.variable} ${anton.variable}`} suppressHydrationWarning={true}>
+    <html lang="pt-br" className={`${roboto.variable} ${anton.variable} ${poppins.variable}`} suppressHydrationWarning={true}>
       <body className="font-sans bg-brand-bg text-brand-text">
         <Navbar />
         <main>{children}</main>

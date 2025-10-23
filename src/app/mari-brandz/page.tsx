@@ -19,7 +19,7 @@ export default function QuemSomosPage() {
           <p className="mt-4 text-xl md:text-2xl"> Artista, Astróloga, Taróloga e Terapeuta Holística. </p>
         </div>
       </section>
-      <section className="bg-brand-white py-20 md:py-32">
+      <section className="bg-brand-contact py-20 md:py-32">
         <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 lg:px-8">
           <div className="w-full">
             <Image src="/images/mari.jpg" alt="Foto de Marî Brañdz" width={500} height={500} objectFit="cover" className="rounded-lg shadow-2xl"  />

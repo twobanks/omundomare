@@ -14,6 +14,7 @@ const config = {
         'brand-blue-light': '#D1F2EF',
         'brand-green': '#7F9E59',
         'brand-green-light': '#D6EDAE',
+        'brand-contact': '#F6F5F2',
         'brand-bg': '#F9FAFB', // Um branco "off-white" (gray-50) para fundos de seção
         'brand-text': '#1F2937', // (gray-800) Cor principal do texto
         'brand-text-muted': '#4B5563', // (gray-600) Cor de texto secundária
@@ -24,8 +25,17 @@ const config = {
       },
       fontFamily: {
         sans: ['var(--font-roboto)', 'sans-serif'],
-        serif: ['var(--font-anton)', 'serif'],
+        serif: ['var(--font-poppins)', 'serif'],
       },
+      keyframes: {
+        turn360Infinite: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        }
+      },
+      animation: {
+        'turn360': 'turn360Infinite 5s linear infinite',
+      }
     },
   },
   plugins: [],
