@@ -1,3 +1,4 @@
+import HeadSection from '@/components/HeadSection'
 import { SpotifyEpisode } from '@/utils/types'
 import Image from 'next/image'
 
@@ -48,12 +49,7 @@ export default async function PodcastPage() {
   const episodes = await getPodcastEpisodes()
   return (
     <>
-      <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
-        <Image src="/images/mapa-astral.webp" alt="Galáxia com tons de roxo e azul" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50"  />
-        <div className="z-10 p-4 text-brand-white">
-          <h1 className="font-serif text-6xl font-bold tracking-widest"> Entregando o Ouro </h1>
-        </div>
-      </section>
+      <HeadSection image="/images/bg-hero.jpg" titulo='Entregando o Ouro' />
       <section className="bg-brand-contact py-20 md:py-24">
         <div className="container mx-auto max-w-7xl px-6 lg:px-8">
           {episodes.length === 0 ? (

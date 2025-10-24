@@ -10,11 +10,13 @@ const config = {
       colors: {
         'brand-white': '#FFFFFF',
         'brand-brown': '#70311D',
+        'brand-brown-light': '#eddec0',
         'brand-blue': '#45A9BF',
         'brand-blue-light': '#D1F2EF',
         'brand-green': '#7F9E59',
         'brand-green-light': '#D6EDAE',
         'brand-contact': '#F6F5F2',
+        'brand-icon': '#B4975D',
         'brand-bg': '#F9FAFB', // Um branco "off-white" (gray-50) para fundos de seção
         'brand-text': '#1F2937', // (gray-800) Cor principal do texto
         'brand-text-muted': '#4B5563', // (gray-600) Cor de texto secundária
@@ -34,7 +36,7 @@ const config = {
         }
       },
       animation: {
-        'turn360': 'turn360Infinite 5s linear infinite',
+        'turn360': 'turn360Infinite 15s linear infinite',
       }
     },
   },

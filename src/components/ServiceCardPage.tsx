@@ -1,32 +1,33 @@
 import Image from 'next/image'
 import Link from 'next/link';
+import { FaWhatsapp } from 'react-icons/fa' 
 
 import { Servico } from "@/utils/types";
-import { WHATSAPP } from '@/utils/const';
+import { generateWhatsAppLink } from '@/utils/functions';
 
 export function ServiceCard({ servico }: { servico: Servico }) {
-  const mensagemCodificada = encodeURIComponent(`Olá, Mari! Tenho interesse no serviço "${servico.titulo}" (${servico.preco}). Gostaria de agendar um horário com você.`)
-  const urlWhatsapp = `https://wa.me/${WHATSAPP}?text=${mensagemCodificada}`
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg border bg-black shadow-lg transition-all duration-300 hover:scale-105">
-      <div className="relative h-64 w-full">
-        <Image src={servico.imagemUrl} alt={servico.alt} layout="fill" objectFit="cover" />
+    <div className="flex flex-col overflow-hidden rounded-lg border bg-brand-contact shadow-lg transition-all duration-300 hover:scale-115">
+      <div className="relative h-64 w-full bg-brand-contact">
+        <Image src={servico.imagemUrl} alt={servico?.titulo} width={200} height={200} className='mx-auto pt-10' />
       </div>
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>
-          <h2 className="font-serif text-2xl font-bold text-white">
+          <h2 className="font-serif text-2xl font-bold text-brand-brown">
             {servico.titulo}
           </h2>
-          <p className="mt-2 text-xl font-semibold text-brand-lilac">
-            {servico.preco}
-          </p>
-          <p className="mt-4 text-base text-gray-300">
+          {servico.preco && (
+            <p className="mt-2 text-xl font-semibold text-black">
+              {servico.preco}
+            </p>
+          )}
+          <p className="mt-4 text-base text-brand-text-muted">
             {servico.descricao}
           </p>
         </div>
-        <div className="mt-6">
-          <Link href={urlWhatsapp} target='_blank' className="inline-block w-full rounded-full text-brand-lilac bg-black px-10 py-2 text-center text-sm font-bold uppercase tracking-wider transition-colors hover:bg-brand-lilac hover:text-white">
-            AGENDE AQUI
+        <div className="mt-6 flex justify-start">
+          <Link  href={generateWhatsAppLink(servico)}  target='_blank'  className="inline-flex w-full justify-center gap-2 rounded-lg text-white bg-brand-brown px-4 py-2 text-sm font-bold uppercase tracking-wider">
+            Agendar atendimento <FaWhatsapp className="h-4 w-4" />
           </Link>
         </div>
       </div>

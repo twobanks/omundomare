@@ -1,3 +1,4 @@
+import HeadSection from '@/components/HeadSection'
 import { YouTubeVideoItem } from '@/utils/types'
 import Image from 'next/image'
 
@@ -21,12 +22,7 @@ export default async function VideosPage() {
   const videos = await getYouTubeVideos()
   return (
     <>
-      <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
-        <Image src="/images/mapa-astral.webp" alt="Galáxia com tons de roxo e azul" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50"  />
-        <div className="z-10 p-4 text-brand-white">
-          <h1 className="font-serif text-6xl font-bold tracking-widest"> Vídeos </h1>
-        </div>
-      </section>
+      <HeadSection image="/images/bg-hero.jpg" titulo='Vídeos' />
       <section className="bg-brand-contact py-20 md:py-24">
         <div className="container mx-auto max-w-7xl px-6 lg:px-8">
           {videos.length === 0 ? (

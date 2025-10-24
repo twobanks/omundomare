@@ -28,8 +28,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br" className={`${roboto.variable} ${anton.variable} ${poppins.variable}`} suppressHydrationWarning={true}>
-      <body className="font-sans bg-brand-bg text-brand-text">
+    <html lang="pt-br" className={`${roboto.variable} ${anton.variable} ${poppins.variable}`} suppressHydrationWarning>
+      <body className="font-sans bg-brand-bg text-brand-text" suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <Footer />

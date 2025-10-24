@@ -14,7 +14,7 @@ export default function HeroSection() {
               Explore insights astrológicos personalizados que fortalecem sua jornada.
             </p>
             <Link href="/atendimentos" className="inline-block bg-brand-yellow text-brand-text font-bold uppercase tracking-wider py-3 px-8 rounded-lg hover:bg-brand-yellow-dark transition-colors duration-300">
-              Agende um atendimento
+              Agende um atendimento ⚡
             </Link>
           </div>
           <div className="w-full lg:w-5/12 flex justify-center">

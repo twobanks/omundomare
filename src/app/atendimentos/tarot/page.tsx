@@ -1,30 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
-import CardAtendimento from '@/components/AtendimentoCard'
+import AtendimentoSection from '@/components/AtendimentoSection'
+import HeadSection from '@/components/HeadSection'
 import { dadosTarot } from '@/utils/dados'
 import Image from 'next/image'
-import { FaLightbulb, FaCompass, FaQuestion, FaCalendarAlt, FaVideo, FaMicrophoneAlt } from 'react-icons/fa'
+import { FaLightbulb, FaCompass, FaQuestion } from 'react-icons/fa'
 
 export default function TarotPage() {
   return (
     <>
-      <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
-        <Image src="/images/bg-mapa-astral.jpg"  alt="Mapa Astral e Zodíaco" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50" />
-        <div className="z-10 p-4 text-brand-white">
-          <h1 className="font-serif text-6xl font-bold tracking-widest text-brand-green">
-            Tarot
-          </h1>
-          <p className="mt-4 text-xl md:text-2xl">
-            Clareza e orientação para sua jornada.
-          </p>
-        </div>
-      </section>
+      <HeadSection image="/images/bg-mapa-astral.jpg" titulo='Tarot' />
       <section className="bg-brand-contact py-20 md:py-24">
         <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 lg:px-8">
           <div className="w-full">
             <Image src="/images/test.png" alt="Mãos em posição de cura Reiki" width={500} height={500} objectFit="cover" />
           </div>
           <div className="text-left">
-            <h2 className="font-serif text-5xl font-bold tracking-wider text-brand-green">
+            <h2 className="font-serif text-5xl font-bold tracking-wider text-brand-brown">
               O que é o Tarot?
             </h2>
             <div className="mt-6 space-y-5 text-lg text-brand-text">
@@ -38,18 +29,18 @@ export default function TarotPage() {
           </div>
         </div>
       </section>
-      <section className="bg-brand-green-light py-20">
+      <section className="bg-brand-brown-light py-20">
         <div className="container mx-auto max-w-3xl px-6 lg:px-8">
-          <h2 className="mb-12 text-center font-serif text-5xl font-bold tracking-wider text-brand-green">
+          <h2 className="mb-12 text-center font-serif text-5xl font-bold tracking-wider text-brand-brown">
             Benefícios da Leitura
           </h2>
           <div className="space-y-8">
             <div className="flex items-start space-x-6">
               <div className="pt-1">
-                <FaLightbulb className="h-10 w-10 text-brand-green" />
+                <FaLightbulb className="h-10 w-10 text-brand-brown" />
               </div>
               <div>
-                <h3 className="font-serif text-3xl font-bold text-brand-green">Clareza</h3>
+                <h3 className="font-serif text-3xl font-bold text-brand-brown">Clareza</h3>
                 <p className="mt-1 text-lg text-brand-text">
                   Ilumine situações, padrões e bloqueios da sua vida.
                 </p>
@@ -57,10 +48,10 @@ export default function TarotPage() {
             </div>
             <div className="flex items-start space-x-6">
               <div className="pt-1">
-                <FaCompass className="h-10 w-10 text-brand-green" />
+                <FaCompass className="h-10 w-10 text-brand-brown" />
               </div>
               <div>
-                <h3 className="font-serif text-3xl font-bold text-brand-green">Direcionamento</h3>
+                <h3 className="font-serif text-3xl font-bold text-brand-brown">Direcionamento</h3>
                 <p className="mt-1 text-lg text-brand-text">
                   Receba insights e aconselhamentos para tomar melhores decisões.
                 </p>
@@ -68,10 +59,10 @@ export default function TarotPage() {
             </div>
             <div className="flex items-start space-x-6">
               <div className="pt-1">
-                <FaQuestion className="h-10 w-10 text-brand-green" />
+                <FaQuestion className="h-10 w-10 text-brand-brown" />
               </div>
               <div>
-                <h3 className="font-serif text-3xl font-bold text-brand-green">Respostas</h3>
+                <h3 className="font-serif text-3xl font-bold text-brand-brown">Respostas</h3>
                 <p className="mt-1 text-lg text-brand-text">
                   Traga suas dúvidas e encontre novas perspectivas e caminhos.
                 </p>
@@ -80,7 +71,7 @@ export default function TarotPage() {
           </div>
         </div>
       </section>
-      <CardAtendimento dados={dadosTarot} />
+      <AtendimentoSection dados={dadosTarot} />
     </>
   )
 }

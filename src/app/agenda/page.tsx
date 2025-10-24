@@ -6,7 +6,7 @@ import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import 'react-day-picker/dist/style.css'
 import { WHATSAPP } from '@/utils/const'
-import Image from 'next/image'
+import HeadSection from '@/components/HeadSection'
 
 const servicos = [ 'Mapa Astral', 'Reiki', 'Tarot', ]
 
@@ -47,19 +47,13 @@ export default function AgendaForm() {
       Horário: ${horario}
       Aguardo sua confirmação!
     `
-
     const linkWhatsApp = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`
     window.open(linkWhatsApp, '_blank')
   }
 
   return (
     <>
-      <section className="relative flex h-[40vh] min-h-[300px] items-center justify-center text-center">
-        <Image src="/images/mapa-astral.webp" alt="Galáxia com tons de roxo e azul" layout="fill" objectFit="cover" quality={75} className="-z-10 brightness-50"  />
-        <div className="z-10 p-4 text-brand-white">
-          <h1 className="font-serif text-6xl font-bold tracking-widest"> Agendamento </h1>
-        </div>
-      </section>
+      <HeadSection image="/images/mapa-astral.webp" titulo='Agendamento' />
       <section className="bg-brand-white py-20 md:py-24">
         <div className="max-w-4xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
@@ -67,11 +61,7 @@ export default function AgendaForm() {
               <label className="block text-sm font-medium text-brand-text mb-2">
                 1. Escolha o Serviço
               </label>
-              <select
-                value={servico}
-                onChange={(e) => setServico(e.target.value)}
-                className="w-full p-2 border rounded-md"
-              >
+              <select value={servico} onChange={(e) => setServico(e.target.value)} className="w-full p-2 border rounded-md">
                 <option value="">Selecione um serviço</option>
                 {servicos.map((s) => (
                   <option key={s} value={s}>{s}</option>
@@ -83,14 +73,7 @@ export default function AgendaForm() {
               <label className="block text-sm font-medium text-brand-text mb-2">
                 2. Escolha a Data
               </label>
-              <DayPicker
-                mode="single"
-                selected={data}
-                onSelect={setData}
-                locale={ptBR}
-                disabled={isDayDisabled}
-                className="border rounded-md p-2 bg-brand-bg"
-              />
+              <DayPicker mode="single" selected={data} onSelect={setData} locale={ptBR} disabled={isDayDisabled} className="border rounded-md p-2 bg-brand-bg" />
             </div>
           </div>
           <div className="space-y-6">
@@ -126,9 +109,7 @@ export default function AgendaForm() {
               <button
                 onClick={handleAgendar}
                 disabled={!servico || !data || !horario}
-                className="w-full bg-brand-yellow text-brand-text font-bold py-3 px-6 rounded-lg 
-                          hover:bg-brand-yellow-dark transition-colors
-                          disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="w-full bg-brand-yellow text-brand-text font-bold py-3 px-6 rounded-lg hover:bg-brand-yellow-dark transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
               >
                 Agendar por WhatsApp
               </button>
