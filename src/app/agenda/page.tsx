@@ -1,16 +1,13 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { DayPicker } from 'react-day-picker'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import 'react-day-picker/dist/style.css'
 import { WHATSAPP } from '@/utils/const'
 import HeadSection from '@/components/HeadSection'
-
-const servicos = [ 'Mapa Astral', 'Reiki', 'Tarot', ]
-
-const horariosDisponiveis = [ '08:00', '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00' ]
+import { horariosBeleza, horariosPadrao, servicos } from '@/utils/dados'
 
 export default function AgendaForm() {
   const [servico, setServico] = useState<string>('')
@@ -18,11 +15,15 @@ export default function AgendaForm() {
   const [horario, setHorario] = useState<string>('')
 
   const hoje = new Date()
+
+  useEffect(() => {
+    setData(undefined)
+    setHorario('')
+  }, [servico]) 
+
   const isDayDisabled = (date: Date): boolean => {
-    const dayOfWeek = date.getDay()
-    if (dayOfWeek === 0 || dayOfWeek === 6) {
-      return true
-    }
+    const dayOfWeek = date.getDay() 
+
     const startOfToday = new Date(
       hoje.getFullYear(),
       hoje.getMonth(),
@@ -31,8 +32,17 @@ export default function AgendaForm() {
     if (date < startOfToday) {
       return true
     }
-    return false
+
+    const isBeleza = servico === 'Manicure' || servico === 'Pedicure'
+
+    if (isBeleza) {
+      return dayOfWeek !== 1 && dayOfWeek !== 5
+    } else {
+      return dayOfWeek === 0 || dayOfWeek === 6
+    }
   }
+  const isBeleza = servico === 'Manicure' || servico === 'Pedicure'
+  const horariosAtuais = isBeleza ? horariosBeleza : horariosPadrao
 
   const handleAgendar = () => {
     if (!servico || !data || !horario) {
@@ -58,10 +68,14 @@ export default function AgendaForm() {
         <div className="max-w-4xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-brand-text mb-2">
+              <label className="block text-lg font-serif font-bold text-brand-text mb-2">
                 1. Escolha o Serviço
               </label>
-              <select value={servico} onChange={(e) => setServico(e.target.value)} className="w-full p-2 border rounded-md">
+              <select
+                value={servico}
+                onChange={(e) => setServico(e.target.value)}
+                className="w-full p-3 border border-gray-300 rounded-lg bg-white text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-lilac"
+              >
                 <option value="">Selecione um serviço</option>
                 {servicos.map((s) => (
                   <option key={s} value={s}>{s}</option>
@@ -70,16 +84,30 @@ export default function AgendaForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-brand-text mb-2">
+              <label className="block text-lg font-serif font-bold text-brand-text mb-2">
                 2. Escolha a Data
               </label>
-              <DayPicker mode="single" selected={data} onSelect={setData} locale={ptBR} disabled={isDayDisabled} className="border rounded-md p-2 bg-brand-bg" />
+              <div className="p-2 border rounded-lg bg-brand-bg">
+                <DayPicker
+                  mode="single"
+                  selected={data}
+                  onSelect={setData}
+                  locale={ptBR}
+                  disabled={isDayDisabled}
+                  styles={{
+                    head_cell: { color: 'var(--color-brand-lilac)' },
+                    day_selected: { backgroundColor: 'var(--color-brand-lilac)', color: '#fff' },
+                    day_today: { color: 'var(--color-brand-lilac)' }
+                  }}
+                  className="[&_button:hover]:bg-brand-lilac-light [&_button[aria-selected='true']]:bg-brand-lilac [&_button[aria-selected='true']]:text-white"
+                />
+              </div>
             </div>
           </div>
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-brand-text mb-2">
-                3. Escolha o Horário (se a data estiver selecionada)
+              <label className="block text-lg font-serif font-bold text-brand-text mb-2">
+                3. Escolha o Horário
               </label>
               <div className="grid grid-cols-3 gap-2">
                 {!data ? (
@@ -87,15 +115,15 @@ export default function AgendaForm() {
                     Selecione uma data para ver os horários.
                   </p>
                 ) : (
-                  horariosDisponiveis.map((h) => (
+                  horariosAtuais.map((h) => (
                     <button
                       key={h}
                       onClick={() => setHorario(h)}
                       className={`
-                        p-2 rounded-md border text-sm
+                        p-2 rounded-md border text-sm transition-colors
                         ${horario === h
                           ? 'bg-brand-lilac text-white' 
-                          : 'bg-white text-brand-text hover:bg-gray-100' 
+                          : 'bg-white text-brand-text hover:bg-brand-lilac-light' 
                         }
                       `}
                     >
@@ -105,11 +133,11 @@ export default function AgendaForm() {
                 )}
               </div>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 pt-6 border-t border-gray-200">
               <button
                 onClick={handleAgendar}
                 disabled={!servico || !data || !horario}
-                className="w-full bg-brand-yellow text-brand-text font-bold py-3 px-6 rounded-lg hover:bg-brand-yellow-dark transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="w-full bg-brand-yellow text-brand-text font-bold py-3 px-6 rounded-lg shadow-md transition-colors hover:bg-brand-yellow-dark disabled:bg-gray-300 disabled:cursor-not-allowed"
               >
                 Agendar por WhatsApp
               </button>

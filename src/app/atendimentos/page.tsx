@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { categories, terapiasHolisticas, servicosBeleza } from '@/utils/dados'
 import { ServiceCard } from '@/components/ServiceCardPage'
 import HeadSection from '@/components/HeadSection'
+import AtendimentoInfoCard from '@/components/AtendimentoInfoCard'
 
 export default function AtendimentosPage() {
   const [activeCategory, setActiveCategory] = useState(categories[0])
@@ -13,6 +14,7 @@ export default function AtendimentosPage() {
       <HeadSection image="/images/bg-mapa-astral.jpg" titulo='Atendimentos' />
       <section className="bg-white py-20">
         <div className="container mx-auto max-w-7xl px-6 lg:px-8">
+        <AtendimentoInfoCard />
           <div className="mb-12 flex justify-center space-x-4">
             {categories.map((category) => (
               <button

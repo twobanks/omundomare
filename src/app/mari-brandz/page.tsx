@@ -20,16 +20,19 @@ export default function QuemSomosPage() {
             </h2>
             <div className="mt-6 space-y-5 text-lg text-brand-text-muted">
               <p>
-                <strong className='text-brand-green'>Marî Brañdz`</strong> é Artista Visual, Astróloga, Taróloga e Reikiana.
+                <strong className='text-brand-green'>Marî Brañdz`</strong> é artista visual, astróloga, taróloga, cartomante, reikiana e manicure-pedicure.
               </p>
               <p>
-                Nascida em berço artístico, desde muito nova desenvolveu sua paixão pela arte, música e espiritualidade.
+                Nascida em berço artístico zona norte de - sp desde muito nova mudou-se p/ terras mineiras  Uberaba, cresceu em um berço artístico, entre cores, música e espiritualidade desenvolveu sua paixão pela arte, música entre terreiros afro-indigena e mesa kardecista.
               </p>
               <p>
-                Formada em Design de Moda pela Universidade FUMEC e Pós Graduada em Arteterapia, se especializou em atendimentos holísticos, visando unir seus conhecimentos artísticos com o autoconhecimento, a cura e a espiritualidade.
+                Com Ascendente em Peixes, Sol e Vênus em Virgem e Lua em Capricórnio, une o sensível ao prático em tudo o que cria.
               </p>
               <p>
-                Fundadora do <Link href="/atendimentos" className="font-bold text-brand-green hover:text-brand-yellow-dark">@omundomare</Link> 🌞, seu propósito é guiar pessoas em suas jornadas de autoconhecimento, expansão da consciência e cura.
+                Formada em Astrologia Humanista pela escola de saberes ocultos Tanto Astral, cursou  Tec de Enfermagem, Serviço Social na UFTM, Marketing, Historia e se especializou em atendimentos holísticos: Reiki, Cartas de Tarot de forma cartomante visando unir seus conhecimentos artísticos com o autoconhecimento, a cura e a espiritualidade.
+              </p>
+              <p>
+                Fundadora do <Link href="/atendimentos" className="font-bold text-brand-green hover:text-brand-yellow-dark">@omundomare</Link> 🌞, seu propósito é guiar pessoas em suas jornadas de autoconhecimento, expansão da consciência e cura atraves do meu servir.
               </p>
             </div>
           </div>
