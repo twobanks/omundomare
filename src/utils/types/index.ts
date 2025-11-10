@@ -38,13 +38,13 @@ export type SpotifyEpisode = {
 }
 
 export type Servico = {
-  id: number
+  id?: number
   titulo: string
-  preco: string
+  preco?: string
   descricao: string
-  categoria: string
+  categoria?: string
   imagemUrl: string
-  alt: string
+  alt?: string
 }
 export type StrapiServico = {
   id: number
