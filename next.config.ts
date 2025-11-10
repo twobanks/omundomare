@@ -24,13 +24,13 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'omundomare-backend.onrender.com', // Sua URL do Render
+        hostname: 'omundomare-admin.onrender.com', 
         port: '',
         pathname: '/uploads/**',
       },
       {
         protocol: 'https',
-        hostname: 'res.cloudinary.com', // Onde as imagens vão morar
+        hostname: 'res.cloudinary.com', 
         port: '',
         pathname: '/**',
       },
