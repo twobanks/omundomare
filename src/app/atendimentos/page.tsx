@@ -1,6 +1,6 @@
 "use client" 
 
-import { useState } from 'react' 
+import { useMemo, useState } from 'react' 
 
 import { categories, terapiasHolisticas, servicosBeleza } from '@/utils/dados'
 import { ServiceCard } from '@/components/ServiceCardPage'
@@ -24,6 +24,23 @@ export default function AtendimentosPage() {
   const [activeCategory, setActiveCategory] = useState(categories[0])
   const { data: servicosFormatados, error, isLoading } = useSWR<Servico[]>('/api/atendimentos', fetcher)
   console.log("servicosFormatados", servicosFormatados);
+  const [terapiasHolisticas, servicosBeleza] = useMemo(() => {
+    if (!servicosFormatados) {
+      return [[], []]
+    }
+    
+    // A lógica de formatação já não é necessária!
+    
+    const terapias = servicosFormatados.filter(
+      (s) => s.categoria === 'Terapias Holísticas'
+    )
+    const beleza = servicosFormatados.filter(
+      (s) => s.categoria === 'Serviços de Beleza'
+    )
+
+    return [terapias, beleza]
+
+  }, [servicosFormatados]) // Depende dos dados que vêm do SWR
   return (
     <>
       <HeadSection image="/images/bg-mapa-astral.jpg" titulo='Atendimentos' />
