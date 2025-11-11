@@ -29,15 +29,24 @@ export async function GET() {
       .filter((item) => item && item.titulo)
       .map((item) => {
         const imgData = item.imagem
+        
+        let finalImageUrl = '/images/servico-placeholder.jpg';
+        
+        if (imgData) {
+          if (process.env.NODE_ENV === 'production') {
+            finalImageUrl = imgData.url; 
+          } else {
+            finalImageUrl = `${STRAPI_URL}${imgData.url}`; 
+          }
+        }
+        
         return {
           id: item.id,
           titulo: item.titulo,
           preco: item.preco,
           descricao: item.descricao,
           categoria: item.categoria,
-          imagemUrl: imgData
-            ? `${STRAPI_URL}${imgData.url}` 
-            : '/images/servico-placeholder.jpg',
+          imagemUrl: finalImageUrl, 
           alt: imgData ? imgData.alternativeText || item.titulo : item.titulo,
         }
       })
