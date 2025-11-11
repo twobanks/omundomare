@@ -31,7 +31,7 @@ export async function GET() {
   try {
     // --- MUDANÇA BEM AQUI ---
     const response = await axios.get(
-      `${STRAPI_URL}/api/servicos?populate=imagem`, // Corrigido de "atendimentos" para "servicos"
+      `${STRAPI_URL}/api/atendimentos?populate=imagem`, // Corrigido de "atendimentos" para "servicos"
       {
         headers: {
           Authorization: `Bearer ${STRAPI_TOKEN}`,
