@@ -26,7 +26,7 @@ async function getPodcastEpisodes() {
   try {
     const accessToken = await getSpotifyAccessToken()
     const SHOW_ID = process.env.SPOTIFY_SHOW_ID
-    const maxResults = 9 // Quantos episódios queremos buscar
+    const maxResults = 9 
     const URL = `https://api.spotify.com/v1/shows/${SHOW_ID}/episodes?limit=${maxResults}&market=BR`
     const res = await fetch(URL, {
       headers: {

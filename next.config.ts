@@ -16,24 +16,6 @@ const nextConfig = {
         port: '',
         pathname: '/image/**',
       },
-      {
-        protocol: 'http', 
-        hostname: 'localhost',
-        port: '1337', 
-        pathname: '/uploads/**', 
-      },
-      {
-        protocol: 'https',
-        hostname: 'omundomare-admin.onrender.com', 
-        port: '',
-        pathname: '/uploads/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com', 
-        port: '',
-        pathname: '/**',
-      },
     ],
   },
 }
