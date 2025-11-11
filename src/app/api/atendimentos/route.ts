@@ -1,5 +1,3 @@
-// src/app/api/atendimentos/route.ts
-
 import { NextResponse } from 'next/server'
 import axios from 'axios'
 
@@ -29,9 +27,8 @@ export async function GET() {
   }
 
   try {
-    // --- MUDANÇA BEM AQUI ---
     const response = await axios.get(
-      `${STRAPI_URL}/api/atendimentos?populate=imagem`, // Corrigido de "atendimentos" para "servicos"
+      `${STRAPI_URL}/api/atendimentos?populate=*`, 
       {
         headers: {
           Authorization: `Bearer ${STRAPI_TOKEN}`,
@@ -61,8 +58,6 @@ export async function GET() {
     return NextResponse.json(dadosFormatados)
 
   } catch (error) {
-    // O Axios deita um erro em 404, que este catch apanha
-    console.error('Erro ao buscar dados do Strapi:', error)
     return NextResponse.json(
       { error: 'Falha ao buscar dados do Strapi. Verifique o endpoint.' },
       { status: 502 } 
