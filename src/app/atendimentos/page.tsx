@@ -17,7 +17,6 @@ const fetcher = (url: string) => axios.get(url).then(res => res.data)
 
 export default function AtendimentosPage() {
   const [activeCategory, setActiveCategory] = useState(categories[0])
-
   const { data: json, error } = useSWR<{ data: StrapiServico[] }>(STRAPI_API_URL, fetcher)
 
   const [terapiasHolisticas, servicosBeleza] = useMemo(() => {
