@@ -1,13 +1,15 @@
 import { StaticImageData } from "next/image"
 
-/* export type Servico = {
+export type Servico = {
   titulo: string
   preco?: string
   descricao: string
   imagemUrl: StaticImageData | string
   alt?: string
   link?: string
-} */
+  categoria?: string
+  id?: number
+}
 
 export type YouTubeVideoItem = {
   id: {

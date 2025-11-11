@@ -2,14 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { FaWhatsapp } from 'react-icons/fa' 
 
-import { Servico } from "@/utils/types";
 import { generateWhatsAppLink } from '@/utils/functions';
+import { Servico } from '@/utils/types';
 
-export function ServiceCard({ servico }: { servico: Servico }) {
+export function ServiceCard({ servico }: { servico: Servico | any }) {
   return (
     <div className="flex flex-col overflow-hidden rounded-lg border bg-brand-contact shadow-lg transition-all duration-300 hover:scale-115">
       <div className="relative h-64 w-full bg-brand-contact">
-        <Image src={servico.imagemUrl} alt={servico?.titulo} width={200} height={200} className='mx-auto pt-10' />
+        <Image src={servico?.imagemUrl} alt={servico.alt} width={200} height={200} className='mx-auto pt-10' />
       </div>
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>

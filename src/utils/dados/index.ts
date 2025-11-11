@@ -1,9 +1,9 @@
-import { Servico } from "../types"
+
 import imgMapa from '../../../public/icons/icon_test.png'
 import imgTarot from '../../../public/icons/icon_test_1.png'
 import imgReiki from '../../../public/icons/icon_test_2.png'
 
-const terapiasHolisticas: Servico[] = [
+const terapiasHolisticas = [
   {
     titulo: 'Pergunta objetiva',
     preco: 'R$ 35,00',
@@ -76,7 +76,7 @@ const terapiasHolisticas: Servico[] = [
   },
 ]
 
-const servicosBeleza: Servico[] = [
+const servicosBeleza = [
   {
     titulo: 'Sobrancelhas',
     preco: 'R$ 60,00',

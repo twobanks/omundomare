@@ -45,6 +45,7 @@ export async function GET() {
     return NextResponse.json(dadosFormatados)
 
   } catch (error) {
+    console.error('Erro ao buscar dados do Strapi:')
     return NextResponse.json(
       { error: 'Falha ao buscar dados do Strapi. Verifique o endpoint.' },
       { status: 502 } 
