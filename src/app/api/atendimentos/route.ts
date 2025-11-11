@@ -28,7 +28,7 @@ export async function GET() {
 
   try {
     const response = await axios.get(
-      `${STRAPI_URL}/api/atendimentos?populate=*`, 
+      `${STRAPI_URL}/api/atendimentos`, 
       {
         headers: {
           Authorization: `Bearer ${STRAPI_TOKEN}`,
