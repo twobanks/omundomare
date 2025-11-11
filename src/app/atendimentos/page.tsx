@@ -6,9 +6,24 @@ import { categories, terapiasHolisticas, servicosBeleza } from '@/utils/dados'
 import { ServiceCard } from '@/components/ServiceCardPage'
 import HeadSection from '@/components/HeadSection'
 import AtendimentoInfoCard from '@/components/AtendimentoInfoCard'
+import axios from 'axios'
+import useSWR from 'swr'
+
+type Servico = {
+  id: number
+  titulo: string
+  preco: string
+  descricao: string
+  categoria: string
+  imagemUrl: string
+  alt: string
+}
+const fetcher = (url: string) => axios.get(url).then(res => res.data)
 
 export default function AtendimentosPage() {
   const [activeCategory, setActiveCategory] = useState(categories[0])
+  const { data: servicosFormatados, error, isLoading } = useSWR<Servico[]>('/api/atendimentos', fetcher)
+  console.log("servicosFormatados", servicosFormatados);
   return (
     <>
       <HeadSection image="/images/bg-mapa-astral.jpg" titulo='Atendimentos' />
