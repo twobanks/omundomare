@@ -20,7 +20,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'phenomenal-friendship-0bab359607.strapiapp.com/', 
         port: '',
-        pathname: '/uploads/**', 
+        pathname: '/**',
       },
       {
         protocol: 'http', 
