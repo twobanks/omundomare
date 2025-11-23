@@ -36,7 +36,7 @@ export default function AgendaForm() {
     const isBeleza = servico === 'Manicure' || servico === 'Pedicure'
 
     if (isBeleza) {
-      return dayOfWeek !== 1 && dayOfWeek !== 5
+      return dayOfWeek !== 2 && dayOfWeek !== 4
     } else {
       return dayOfWeek === 0 || dayOfWeek === 6
     }
@@ -49,15 +49,22 @@ export default function AgendaForm() {
       alert('Por favor, selecione o serviço, a data e o horário.')
       return
     }
-    const dataFormatada = format(data, "EEEE, dd 'de' MMMM", { locale: ptBR })
-    const mensagem = `Olá, Mari!
-      Gostaria de agendar um horário para:
-      Serviço: ${servico}
-      Data: ${dataFormatada}
-      Horário: ${horario}
-      Aguardo sua confirmação!
-    `
-    const linkWhatsApp = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`
+    const dataFormatada = format(data, "EEEE, dd/MM/yyyy", { locale: ptBR })
+    console.log("dataFormatada", dataFormatada);
+
+    const mensagem = `*Olá, Mari!* 
+
+Gostaria de agendar um horário para:
+
+*Serviço:* ${servico}
+*Data:* ${dataFormatada}
+*Horário:* ${horario}
+
+Aguardo sua confirmação! `;
+
+    const mensagemCodificada = encodeURIComponent(mensagem);
+
+    const linkWhatsApp = `https://wa.me/${WHATSAPP}?text=${mensagemCodificada}`;
     window.open(linkWhatsApp, '_blank')
   }
 
