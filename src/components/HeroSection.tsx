@@ -4,22 +4,32 @@ import Image from 'next/image'
 export default function HeroSection() {
   const heroImageUrl = "/images/team-bg.png" 
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-white bg-cover bg-center bg-black" style={{ backgroundImage: `url('${heroImageUrl}')` }} role="banner" aria-labelledby="hero-title">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-          <div className="w-full lg:w-6/12 text-center lg:text-left">
-            <h1 className="font-serif text-6xl md:text-6xl font-bold text-brand-yellow mb-4"> Desvende seu Caminho </h1>
-            <p className="font-sans text-lg text-white max-w-2xl mx-auto lg:mx-0 mb-8">
+    <section className="relative flex min-h-[90vh] items-center justify-center bg-cover bg-center bg-black bg-no-repeat" style={{ backgroundImage: `url('${heroImageUrl}')` }}  role="banner"  aria-labelledby="hero-title">
+      {/*  */}
+      <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
+          <div className="w-full text-center lg:w-6/12 lg:text-left">
+            <h1 
+              id="hero-title"
+              className="mb-6 font-serif text-4xl font-bold text-brand-yellow sm:text-5xl lg:text-7xl leading-tight"
+            > 
+              Desvende seu Caminho 
+            </h1>
+            
+            <p className="mx-auto mb-8 max-w-lg font-sans text-base text-gray-100 sm:text-lg lg:mx-0 lg:text-xl">
               Desvende os segredos das estrelas e alinhe sua vida com o universo.
               Explore insights astrológicos personalizados que fortalecem sua jornada.
             </p>
-            <Link href="/atendimentos" className="inline-block bg-brand-yellow text-brand-text font-bold uppercase tracking-wider py-3 px-8 rounded-lg hover:bg-brand-yellow-dark transition-colors duration-300">
+            
+            <Link href="/atendimentos" className="inline-block rounded-full bg-brand-yellow px-8 py-4 text-sm font-bold uppercase tracking-wider text-brand-text shadow-lg transition-transform hover:scale-105 hover:bg-brand-yellow-dark sm:text-base">
               Agende um atendimento ⚡
             </Link>
           </div>
-          <div className="w-full lg:w-5/12 flex justify-center">
-            <figure className="animate-turn360">
-              <Image src="/images/sign-picture.png" alt="Signos de astrologia" width={450}  height={450}  className="rounded-lg w-full h-auto" />
+          <div className="flex w-full justify-center lg:w-6/12">
+            <figure className="animate-turn360 relative">
+              <div className="relative h-auto w-64 sm:w-80 lg:w-[500px]">
+                <Image src="/images/sign-picture.png" alt="Signos de astrologia" width={500} height={500} priority className="h-auto w-full drop-shadow-2xl"  />
+              </div>
             </figure>
           </div>
         </div>

@@ -1,15 +1,31 @@
 import Links from "./Links";
 import { generateWhatsAppLink } from "@/utils/functions";
 
-export default function AtendimentoSection({ dados } : { dados: { titulo: string; texto: string; titulo_link: string; page?: string; type?: string; } }) {
-    const heroImageUrl = "/images/bg-dark.png" 
-    return(
-        <section className="relative flex items-center justify-center text-white bg-cover bg-center bg-brand-contact py-32 text-center"  style={{ backgroundImage: `url('${heroImageUrl}')` }} role="banner" aria-labelledby="hero-title">
-            <div className="container mx-auto max-w-3xl px-6 lg:px-8">
-                <h2 className="font-serif text-5xl font-bold tracking-wider text-brand-icon"> {dados.titulo} </h2>
-                <p className="mt-4 text-lg text-brand-text"> {dados.texto}</p>
-                <Links link={dados.type === 'sobre' ? '/atendimentos' : generateWhatsAppLink(dados)} texto={dados.titulo_link} colorBg='icon' colorTexto='black' />
-            </div>
-        </section>
-    )
+interface AtendimentoSectionProps {
+  dados: {
+    titulo: string;
+    texto: string;
+    titulo_link: string;
+    page?: string;
+    type?: string;
+  }
+}
+
+export default function AtendimentoSection({ dados }: AtendimentoSectionProps) {
+  const heroImageUrl = "/images/bg-dark.png"
+
+  return (
+    <section className="relative flex items-center justify-center bg-brand-contact bg-cover bg-center py-20 md:py-32 text-center"style={{ backgroundImage: `url('${heroImageUrl}')` }} role="banner" aria-labelledby="cta-title">
+      <div className="absolute inset-0 bg-black/40 transition-opacity"></div>
+      <div className="container relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
+        <h2 id="cta-title"className="font-serif text-3xl font-bold tracking-wider text-brand-icon sm:text-4xl md:text-5xl"> 
+          {dados.titulo} 
+        </h2>
+        <p className="mt-4 mb-10 text-base text-gray-100 sm:text-lg md:text-xl"> 
+          {dados.texto}
+        </p>
+        <Links link={dados.type === 'sobre' ? '/atendimentos' : generateWhatsAppLink(dados)} texto={dados.titulo_link} colorBg='icon' colorTexto='black' />
+      </div>
+    </section>
+  )
 }
