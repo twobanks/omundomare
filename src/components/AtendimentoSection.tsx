@@ -20,7 +20,7 @@ export default function AtendimentoSection({ dados }: AtendimentoSectionProps) {
         <h2 id="cta-title"className="font-serif text-3xl font-bold tracking-wider text-brand-icon sm:text-4xl md:text-5xl"> 
           {dados.titulo} 
         </h2>
-        <p className="mt-4 mb-10 text-base text-gray-100 sm:text-lg md:text-xl"> 
+        <p className="mt-4 mb-10 text-base text-brand-text sm:text-lg md:text-xl"> 
           {dados.texto}
         </p>
         <Links link={dados.type === 'sobre' ? '/atendimentos' : generateWhatsAppLink(dados)} texto={dados.titulo_link} colorBg='icon' colorTexto='black' />
