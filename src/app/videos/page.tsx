@@ -1,6 +1,12 @@
 import HeadSection from '@/components/HeadSection'
 import { YouTubeVideoItem } from '@/utils/types'
+import { Metadata } from 'next'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Vídeos', 
+  description: 'Assista aos vídeos da Marî Brañdz sobre Mapa Astral, Reiki e outros temas espirituais.',
+}
 
 async function getYouTubeVideos() {
   const API_KEY = process.env.YOUTUBE_API_KEY

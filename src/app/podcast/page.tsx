@@ -1,7 +1,13 @@
 export const dynamic = 'force-dynamic';
 import HeadSection from '@/components/HeadSection';
 import { SpotifyEpisode } from '@/utils/types';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Podcast - Entregando o Ouro', 
+  description: ' Ouça o podcast "Entregando o Ouro" com Marî Brañdz. Descubra insights, histórias e reflexões sobre autoconhecimento, espiritualidade e desenvolvimento pessoal.',
+}
 
 async function getSpotifyAccessToken() {
   const client_id = process.env.SPOTIFY_CLIENT_ID
@@ -27,7 +33,7 @@ async function getPodcastEpisodes() {
   try {
     const accessToken = await getSpotifyAccessToken()
     const SHOW_ID = process.env.SPOTIFY_SHOW_ID
-    const maxResults = 9 
+    const maxResults = 30 
     const URL = `https://api.spotify.com/v1/shows/${SHOW_ID}/episodes?limit=${maxResults}&market=BR`
     const res = await fetch(URL, {
       headers: {
@@ -68,21 +74,12 @@ export default async function PodcastPage() {
                   className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-brand-white shadow-lg transition-all duration-300 hover:shadow-2xl"
                 >
                   <div className="relative h-64 w-full">
-                    <Image
-                      src={episode.images[0].url} 
-                      alt={episode.name}
-                      layout="fill"
-                      objectFit="cover"
-                    />
+                    <Image src={episode.images[0].url}  alt={episode.name} layout="fill" objectFit="cover" />
                   </div>
                   
                   <div className="flex flex-1 flex-col p-6">
                     <p className="text-sm text-brand-text-muted">
-                      {new Date(episode.release_date).toLocaleDateString('pt-BR', {
-                        day: 'numeric',
-                        month: 'short',
-                        year: 'numeric',
-                      })}
+                      {new Date(episode.release_date).toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' })}
                     </p>
                     <h3 className="mt-2 font-serif text-xl font-bold text-brand-text hover:text-brand-lilac">
                       {episode.name}

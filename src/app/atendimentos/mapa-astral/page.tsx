@@ -2,8 +2,14 @@
 import AtendimentoSection from '@/components/AtendimentoSection'
 import HeadSection from '@/components/HeadSection'
 import { dadosMapa } from '@/utils/dados'
+import { Metadata } from 'next'
 import Image from 'next/image'
-import { FaBrain, FaHeart, FaBriefcase, FaStar } from 'react-icons/fa'
+import { FaBrain, FaBriefcase, FaHeart, FaStar } from 'react-icons/fa'
+
+export const metadata: Metadata = {
+  title: 'Mapa Astral', 
+  description: 'Agende sua sessão de Mapa Astral online. Descubra seu destino, talentos e potencial.',
+}
 
 export default function MapaAstralPage() {
   return (

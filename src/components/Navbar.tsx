@@ -37,9 +37,9 @@ export default function Navbar() {
                   <span
                     className={`
                       px-2 py-1 text-sm font-medium uppercase tracking-wider cursor-pointer flex items-center
-                      hover:text-brand-blue
+                      hover:text-brand-yellow
                       ${pathname.startsWith(link.href) 
-                        ? 'text-brand-blue' 
+                        ? 'text-brand-yellow' 
                         : 'text-brand-white'
                       }
                     `}
@@ -55,9 +55,9 @@ export default function Navbar() {
                           href={subLink.href}
                           className={`
                             block px-4 py-2 text-sm uppercase tracking-wider 
-                            hover:bg-gray-800 hover:text-brand-blue
+                            hover:bg-gray-800 hover:text-brand-yellow
                             ${pathname === subLink.href 
-                              ? 'text-brand-blue' 
+                              ? 'text-brand-yellow' 
                               : 'text-brand-white'
                             }
                           `}
@@ -75,9 +75,9 @@ export default function Navbar() {
                   href={link.href}
                   className={`
                     px-2 py-1 text-sm font-medium uppercase tracking-wider 
-                    hover:text-brand-blue
+                    hover:text-brand-yellow
                     ${pathname === link.href 
-                      ? 'text-brand-blue' 
+                      ? 'text-brand-yellow' 
                       : 'text-brand-white' 
                     }
                   `}
@@ -88,7 +88,7 @@ export default function Navbar() {
             )}
           </nav>
           <div className="md:hidden">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="inline-flex items-center justify-center rounded-md p-2 text-brand-blue hover:bg-gray-800 focus:outline-none" aria-expanded={isMobileMenuOpen}>
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="inline-flex items-center justify-center rounded-md p-2 text-brand-yellow hover:bg-gray-800 focus:outline-none" aria-expanded={isMobileMenuOpen}>
               <span className="sr-only">Abrir menu</span>
               {isMobileMenuOpen ? (
                 <FaTimes className="block h-6 w-6" />
@@ -109,9 +109,9 @@ export default function Navbar() {
                     onClick={() => setOpenMobileSubMenu(!openMobileSubMenu)}
                     className={`
                       w-full flex justify-between items-center rounded-md px-3 py-2 text-base 
-                      font-medium uppercase tracking-wider hover:bg-gray-800 hover:text-brand-blue
+                      font-medium uppercase tracking-wider hover:bg-gray-800 hover:text-brand-yellow
                       ${pathname.startsWith(link.href) 
-                        ? 'text-brand-blue' 
+                        ? 'text-brand-yellow' 
                         : 'text-brand-white'
                       }
                     `}
@@ -128,9 +128,9 @@ export default function Navbar() {
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={`
                             block rounded-md px-3 py-2 text-base font-medium uppercase 
-                            tracking-wider hover:bg-gray-800 hover:text-brand-blue
+                            tracking-wider hover:bg-gray-800 hover:text-brand-yellow
                             ${pathname === subLink.href 
-                              ? 'text-brand-blue' 
+                              ? 'text-brand-yellow' 
                               : 'text-brand-white'
                             }
                           `}
@@ -148,9 +148,9 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`
                     block rounded-md px-3 py-2 text-base font-medium uppercase 
-                    tracking-wider hover:bg-gray-800 hover:text-brand-blue
+                    tracking-wider hover:bg-gray-800 hover:text-brand-yellow
                     ${pathname === link.href 
-                      ? 'text-brand-blue' 
+                      ? 'text-brand-yellow' 
                       : 'text-brand-white'
                     }
                   `}
@@ -163,7 +163,7 @@ export default function Navbar() {
           <div className="border-t border-gray-200 pt-8 pb-4">
             <div className="flex justify-center space-x-6">
               {socialLinks.map((social) => (
-                <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-blue text-2xl">
+                <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-yellow text-2xl">
                   {social.icon}
                 </a>
               ))}

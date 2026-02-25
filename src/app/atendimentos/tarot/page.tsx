@@ -2,8 +2,14 @@
 import AtendimentoSection from '@/components/AtendimentoSection'
 import HeadSection from '@/components/HeadSection'
 import { dadosTarot } from '@/utils/dados'
+import { Metadata } from 'next'
 import Image from 'next/image'
-import { FaLightbulb, FaCompass, FaQuestion } from 'react-icons/fa'
+import { FaCompass, FaLightbulb, FaQuestion } from 'react-icons/fa'
+
+export const metadata: Metadata = {
+  title: 'Tarot', 
+  description: 'Agende sua sessão de Tarot online. Descubra tendências, conselhos e clareza para o seu momento atual.',
+}
 
 export default function TarotPage() {
   return (

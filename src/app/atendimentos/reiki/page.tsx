@@ -2,8 +2,14 @@
 import AtendimentoSection from '@/components/AtendimentoSection'
 import HeadSection from '@/components/HeadSection'
 import { dadosReiki } from '@/utils/dados'
+import { Metadata } from 'next'
 import Image from 'next/image'
-import { FaSpa, FaSmileBeam, FaHandHoldingHeart } from 'react-icons/fa'
+import { FaHandHoldingHeart, FaSmileBeam, FaSpa } from 'react-icons/fa'
+
+export const metadata: Metadata = {
+  title: 'Reiki', 
+  description: 'Agende sua sessão de Reiki online. Descubra os benefícios e clareza para o seu momento atual.',
+}
 
 export default function ReikiPage() {
   return (

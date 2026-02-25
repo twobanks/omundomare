@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-
       <section className="bg-brand-contact py-16 md:py-24 lg:py-32">
         <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:gap-16 lg:px-8">
           <div className="w-full order-1 md:order-1">

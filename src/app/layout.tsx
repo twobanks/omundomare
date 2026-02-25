@@ -1,8 +1,8 @@
-import React from 'react'
-import { Roboto, Satisfy, Poppins } from 'next/font/google'
-import './globals.css'
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import { Poppins, Roboto, Satisfy } from 'next/font/google'
+import React from 'react'
+import './globals.css'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -22,8 +22,17 @@ const anton = Satisfy({
 })
 
 export const metadata = {
-  title: '🌞 OMUNDOMARE Por Marî Brañdz',
+  title: {
+    template: '%s | 🌞 OMUNDOMARE Por Marî Brañdz',
+    default: '🌞 OMUNDOMARE Por Marî Brañdz',
+  },
   description: 'Desvende seu Caminho com Terapias holísticas, Astrologia e Arte para sua jornada de autoconhecimento e cura.',
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://omundomare.vercel.app/',
+    siteName: '🌞 OMUNDOMARE Por Marî Brañdz',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

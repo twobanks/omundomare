@@ -1,9 +1,15 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaMoon, FaLayerGroup, FaHandHoldingHeart, FaPaintBrush } from 'react-icons/fa'
 import AtendimentoSection from '@/components/AtendimentoSection'
 import HeadSection from '@/components/HeadSection'
 import { dadosAtendimentoSobre } from '@/utils/dados'
+import { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FaHandHoldingHeart, FaLayerGroup, FaMoon, FaPaintBrush } from 'react-icons/fa'
+
+export const metadata: Metadata = {
+  title: 'Sobre mim', 
+  description: 'Conhecendo a Marî Brañdz',
+}
 
 export default function QuemSomosPage() {
   return (
