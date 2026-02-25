@@ -1,36 +1,14 @@
 "use client" 
 
-import { useMemo, useState } from 'react' 
-import axios from 'axios'
-import useSWR from 'swr'
+import { useState } from 'react'
 
-import { ServiceCard } from '@/components/ServiceCardPage'
-import HeadSection from '@/components/HeadSection'
 import AtendimentoInfoCard from '@/components/AtendimentoInfoCard'
-import { categories } from '@/utils/dados'
-import { Servico } from '@/utils/types'
-
-const fetcher = (url: string) => axios.get(url).then(res => res.data)
+import HeadSection from '@/components/HeadSection'
+import { ServiceCard } from '@/components/ServiceCardPage'
+import { categories, servicosBeleza, terapiasHolisticas } from '@/utils/dados'
 
 export default function AtendimentosPage() {
   const [activeCategory, setActiveCategory] = useState(categories[0])
-  const { data: servicosFormatados } = useSWR<Servico[]>('/api/atendimentos', fetcher)
-
-  const [terapiasHolisticas, servicosBeleza] = useMemo(() => {
-    if (!servicosFormatados) {
-      return [[], []]
-    }
-    const terapias = servicosFormatados.filter(
-      (s) => s.categoria === 'Terapias Holísticas'
-    )
-    const beleza = servicosFormatados.filter(
-      (s) => s.categoria === 'Serviços de Beleza'
-    )
-    
-    return [terapias, beleza]
-    
-  }, [servicosFormatados]) 
-
   return (
     <>
       <HeadSection image="/images/bg-mapa-astral.jpg" titulo='Atendimentos' />

@@ -1,6 +1,5 @@
-import { NAME } from "@/utils/const";
-import { FaInstagram, FaTiktok, FaTwitter, FaFacebook, FaYoutube, FaWhatsapp } from 'react-icons/fa'
-import { WHATSAPP } from '@/utils/const'
+import { NAME, WHATSAPP } from "@/utils/const";
+import { FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 
 const socialLinks = [
   { icon: <FaInstagram />, href: 'https://www.instagram.com/omundomare/' },
@@ -8,7 +7,7 @@ const socialLinks = [
   { icon: <FaTwitter />, href: 'https://twitter.com/omundomare' },
   { icon: <FaFacebook />, href: 'https://www.facebook.com/omundomare' },
   { icon: <FaYoutube />, href: 'https://www.youtube.com/channel/UClb9J77K-QkZ_WSB_4dL2jw' },
-  { icon: <FaWhatsapp />, href: `https://wa.me/${WHATSAPP}?text=Olá, Mari! Gostaria de agendar um horário com você.`}
+  { icon: <FaWhatsapp />, href: `https://wa.me/${WHATSAPP}?text=Olá, Mari! Gostaria de agendar um horário com você.`},
 ]
 
 export default function Footer() {

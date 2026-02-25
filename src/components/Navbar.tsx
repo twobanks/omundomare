@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { FaInstagram, FaTiktok, FaTwitter, FaFacebook, FaYoutube, FaBars, FaTimes, FaWhatsapp, FaChevronDown } from 'react-icons/fa'
-import { navLinks } from '@/utils/dados'
 import { WHATSAPP } from '@/utils/const'
+import { navLinks } from '@/utils/dados'
+import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
+import { FaBars, FaChevronDown, FaFacebook, FaInstagram, FaTiktok, FaTimes, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa'
 
 const socialLinks = [
   { icon: <FaInstagram />, href: 'https://www.instagram.com/omundomare/' },

@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import Links from '@/components/Links'
 import HeroSection from '@/components/HeroSection'
-import { dadosAtendimentosArray } from '@/utils/dados'
+import Links from '@/components/Links'
 import { ServiceCard } from '@/components/ServiceCardPage'
+import { dadosAtendimentosArray } from '@/utils/dados'
+import Image from 'next/image'
 
 export default function Home() {
   return (

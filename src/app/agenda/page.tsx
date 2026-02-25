@@ -1,13 +1,13 @@
 "use client"
 
-import { useState, useEffect } from 'react'
-import { DayPicker } from 'react-day-picker'
+import HeadSection from '@/components/HeadSection'
+import { WHATSAPP } from '@/utils/const'
+import { horariosPadrao, servicos } from '@/utils/dados'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import { useEffect, useState } from 'react'
+import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
-import { WHATSAPP } from '@/utils/const'
-import HeadSection from '@/components/HeadSection'
-import { horariosBeleza, horariosPadrao, servicos } from '@/utils/dados'
 
 export default function AgendaForm() {
   const [servico, setServico] = useState<string>('')
@@ -32,17 +32,9 @@ export default function AgendaForm() {
     if (date < startOfToday) {
       return true
     }
-
-    const isBeleza = servico === 'Manicure' || servico === 'Pedicure'
-
-    if (isBeleza) {
-      return dayOfWeek !== 2 && dayOfWeek !== 4
-    } else {
-      return dayOfWeek === 0 || dayOfWeek === 6
-    }
+    
+    return dayOfWeek === 0 || dayOfWeek === 6
   }
-  const isBeleza = servico === 'Manicure' || servico === 'Pedicure'
-  const horariosAtuais = isBeleza ? horariosBeleza : horariosPadrao
 
   const handleAgendar = () => {
     if (!servico || !data || !horario) {
@@ -89,7 +81,6 @@ Aguardo sua confirmação! `;
                 ))}
               </select>
             </div>
-
             <div>
               <label className="block text-lg font-serif font-bold text-brand-text mb-2">
                 2. Escolha a Data
@@ -122,7 +113,7 @@ Aguardo sua confirmação! `;
                     Selecione uma data para ver os horários.
                   </p>
                 ) : (
-                  horariosAtuais.map((h) => (
+                  horariosPadrao.map((h) => (
                     <button
                       key={h}
                       onClick={() => setHorario(h)}

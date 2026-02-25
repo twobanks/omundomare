@@ -181,7 +181,8 @@ const dadosAtendimentoSobre = {
 }
 
 const servicos = ['Mapa Astral', 'Reiki', 'Tarot', 'Manicure', 'Pedicure']
-const horariosPadrao = [ '08:00', '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00' ]
-const horariosBeleza = [ '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00' ]
+const horariosPadrao = [ '08:00', '09:00', '10:00', '15:00', '16:00', '17:00' ]
+const horariosBeleza = [ '08:00', '09:00', '10:00', '15:00', '16:00', '17:00' ]
 
-export { categories, servicosBeleza, terapiasHolisticas, navLinks, dadosAtendimento, dadosMapa, dadosTarot, dadosReiki, dadosAtendimentosArray, dadosAtendimentoSobre, servicos, horariosBeleza, horariosPadrao }
+export { categories, dadosAtendimento, dadosAtendimentosArray, dadosAtendimentoSobre, dadosMapa, dadosReiki, dadosTarot, horariosBeleza, horariosPadrao, navLinks, servicos, servicosBeleza, terapiasHolisticas }
+
