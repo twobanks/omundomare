@@ -21,8 +21,6 @@ const anton = Satisfy({
   variable: '--font-anton', 
 })
 
-
-
 export const metadata = {
   title: {
     template: '%s | 🌞 OMUNDOMARE Por Marî Brañdz',
@@ -36,7 +34,7 @@ export const metadata = {
     siteName: '🌞 OMUNDOMARE Por Marî Brañdz',
     images: [
       {
-        url: '/images/bg_tarot.jpg', 
+        url: '/images/bg-hero.jpg', 
         width: 1200,
         height: 630,
         alt: 'OMUNDOMARE Por Marî Brañdz',
