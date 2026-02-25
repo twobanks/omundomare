@@ -1,6 +1,7 @@
-import HeadSection from '@/components/HeadSection'
-import { SpotifyEpisode } from '@/utils/types'
-import Image from 'next/image'
+export const dynamic = 'force-dynamic';
+import HeadSection from '@/components/HeadSection';
+import { SpotifyEpisode } from '@/utils/types';
+import Image from 'next/image';
 
 async function getSpotifyAccessToken() {
   const client_id = process.env.SPOTIFY_CLIENT_ID
