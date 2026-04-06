@@ -19,7 +19,7 @@ export default function QuemSomosPage() {
         <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:gap-16 lg:px-8">
           <div className="w-full order-1">
             <div className="relative mx-auto w-full max-w-sm md:max-w-full">
-              <Image src="/images/mari.jpg" alt="Foto de Marî Brañdz" width={500} height={500} style={{ objectFit: 'cover' }} />
+              <Image src="/images/sobre_mim.jpeg" alt="Foto de Marî Brañdz" width={500} height={500} style={{ objectFit: 'cover', borderRadius: '16px' }} />
             </div>
           </div>
           <div className="order-2 text-center md:text-left">

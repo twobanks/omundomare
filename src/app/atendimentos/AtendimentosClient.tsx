@@ -5,7 +5,7 @@ import { useState } from 'react'
 import AtendimentoInfoCard from '@/components/AtendimentoInfoCard'
 import HeadSection from '@/components/HeadSection'
 import { ServiceCard } from '@/components/ServiceCardPage'
-import { categories, servicosBeleza, terapiasHolisticas } from '@/utils/dados'
+import { categories, servicosBeleza, terapiasHolisticas, terapiasPresenciais } from '@/utils/dados'
 
 export default function Atendimentos() {
   const [activeCategory, setActiveCategory] = useState(categories[0])
@@ -29,12 +29,17 @@ export default function Atendimentos() {
             ))}
           </div>
           <div className="mt-16">
-             {activeCategory === categories[0] && (
+            {activeCategory === categories[0] && (
               <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                 {terapiasHolisticas.map((servico) => <ServiceCard key={servico.titulo} servico={servico} /> )}
               </div>
             )}
             {activeCategory === categories[1] && (
+              <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+                {terapiasPresenciais.map((servico) => <ServiceCard key={servico.titulo} servico={servico} />)}
+              </div>
+            )}
+            {activeCategory === categories[2] && (
               <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                 {servicosBeleza.map((servico) => <ServiceCard key={servico.titulo} servico={servico} />)}
               </div>

@@ -1,11 +1,10 @@
-import Link from 'next/link'
+import Links from '@/components/Links'
 import Image from 'next/image'
 
 export default function HeroSection() {
   const heroImageUrl = "/images/team-bg.png" 
   return (
     <section className="relative flex min-h-[90vh] items-center justify-center bg-cover bg-center bg-black bg-no-repeat" style={{ backgroundImage: `url('${heroImageUrl}')` }}  role="banner"  aria-labelledby="hero-title">
-      {/*  */}
       <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
           <div className="w-full text-center lg:w-6/12 lg:text-left">
@@ -20,10 +19,7 @@ export default function HeroSection() {
               Desvende os segredos das estrelas e alinhe sua vida com o universo.
               Explore insights astrológicos personalizados que fortalecem sua jornada.
             </p>
-            
-            <Link href="/atendimentos" className="inline-block rounded-full bg-brand-yellow px-8 py-4 text-sm font-bold uppercase tracking-wider text-brand-text shadow-lg transition-transform hover:scale-105 hover:bg-brand-yellow-dark sm:text-base">
-              Agende um atendimento ⚡
-            </Link>
+            <Links link="/atendimentos" texto='Agende um atendimento ⚡' colorBg='yellow' colorTexto='text' />
           </div>
           <div className="flex w-full justify-center lg:w-6/12">
             <figure className="animate-turn360 relative">

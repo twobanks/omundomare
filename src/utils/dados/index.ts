@@ -4,76 +4,96 @@ import imgTarot from '../../../public/icons/icon_test_1.png'
 import imgReiki from '../../../public/icons/icon_test_2.png'
 
 const terapiasHolisticas = [
+  
   {
-    titulo: 'Pergunta objetiva',
-    preco: 'R$ 35,00',
-    descricao: 'Pergunta objetiva. Duração: 1h.',
-    imagemUrl: '/icons/icon_test.png',
-    alt: 'Pergunta objetiva',
-  },
-  {
-    titulo: 'Mapa Astral',
-    preco: 'R$ 320,00',
-    descricao: 'Entrega em 15-30 dias (PDF).',
+    titulo: 'Mapa Astral + Tarot',
+    preco: 'R$ 480,00',
+    descricao: 'O Mapa Astral auxilia no autoconhecimento e na compreensão de como você lida consigo mesma(o), seus padrões, potenciais e desafios. O Tarot clarifica mensagens do seu inconsciente e traz direcionamento prático para áreas específicas da sua vida, principalmente físico e mental, via áudio ou chamada de vídeo.',
+    duracao: 'Duração: 2h.',
     imagemUrl: '/icons/icon_test_1.png',
-    alt: 'Mapa Astral',
+    alt: 'Mapa Astral + Tarot',
   },
   {
-    titulo: 'Reiki',
-    preco: 'R$ 120,00',
-    descricao: 'Reiki com Cristais. Duração: 50 Minutos.',
-    imagemUrl: '/icons/icon_test_2.png',
-    alt: 'Reiki',
-  },
-  {
-    titulo: '3 perguntas',
+    titulo: 'Mapa Astral ou Revolu Solar',
     preco: 'R$ 320,00',
-    descricao: '3 perguntas. Duração: 1h e 20 Minutos.',
-    imagemUrl: '/icons/icon_test_3.png',
-    alt: '3 perguntas',
+    descricao: 'Para adultos, infantil, empresarial ou relacionamento (sinastria). Leitura completa com Reiki incluso + conselho das cartas, via áudio ou chamada de vídeo.',
+    duracao: 'Duração: 1h 30 min.',
+    imagemUrl: '/icons/icon_test_1.png',
+    alt: 'Mapa Astral ou Revolu Solar',
   },
   {
-    titulo: 'Leitura Semi Completa',
-    preco: 'R$ 206,00',
-    descricao: 'Leitura Semi Semi Completa. Duração: 1h e 30 Minutos.',
+    titulo: 'Leitura Zodiacal Anual',
+    preco: 'R$ 1.800,00 ou 3x de R$ 600,00',
+    descricao: `Acompanhamento e aconselhamento mensal válido por 12 meses a partir da contratação, todos os meses você receberá:
+✨ Tendências energéticas do mês
+ ✨ Cartas de Tarot para direcionamento
+ ✨ Reiki incluso
+ Entrega via áudio + fotos das cartas`,
+    duracao: 'Duração: cada sessão 40 min.',
     imagemUrl: '/icons/icon_test_4.png',
-    alt: 'Leitura Semi Completa',
-  },
-  {
-    titulo: 'Leitura Completa',
-    preco: 'R$ 306,00',
-    descricao: 'Leitura Completa. Duração: 2h.',
-    imagemUrl: '/icons/icon_test_5.png',
-    alt: 'Leitura Completa',
-  },
-  {
-    titulo: 'Leitura do amor/Sinas',
-    preco: 'R$ 192,00',
-    descricao: 'Leitura do amor/Sinas. Duração: 1h e 20 Minutos.',
-    imagemUrl: '/icons/icon_test.png',
-    alt: 'Leitura do amor/Sinas',
-  },
-  {
-    titulo: 'Revolu Solar',
-    preco: 'R$ 289,00',
-    descricao: 'Revolu Solar. Duração: 1h.',
-    imagemUrl: '/icons/icon_test_1.png',
-    alt: 'Revolu Solar',
+    alt: 'Leitura Zodiacal Anual',
   },
   {
     titulo: 'Leitura Mensal',
-    preco: 'R$ 150,00',
-    descricao: 'Leitura Mensal. Duração: 1h.',
+    preco: 'R$ 176,00',
+    descricao: ' Leitura direcionada para compreender as energias e tendências do mês, com orientação prática para suas decisões. Atendimento via áudio ou chamada de vídeo',
+    duracao: 'Duração: 40 min.',
     imagemUrl: '/icons/icon_test_2.png',
     alt: 'Leitura Mensal',
   },
   {
-    titulo: 'Leitura Anual',
-    preco: 'R$ 440,00',
-    descricao: 'Leitura Anual. Duração: 1h.',
-    imagemUrl: '/icons/icon_test_3.png',
-    alt: 'Leitura Anual',
+    titulo: 'Pergunta objetiva',
+    preco: 'R$ 74,00',
+    descricao: ' Consulta focada em uma questão específica, com leitura direta e clara. A pergunta pode ser aberta em até 3 desdobramentos para aprofundar a compreensão da situação, não inclusa envio de Reiki.',
+    duracao: 'Duração: 25min.',
+    imagemUrl: '/icons/icon_test.png',
+    alt: 'Pergunta objetiva',
   },
+  {
+    titulo: 'Leitura de Verdade',
+    preco: 'R$ 150,00',
+    descricao: 'Atendimento via áudio ou chamada de vídeo + fotos das cartas pode fazer 2 pergunta objetiva + conselho início e final de sessão Inspirada na sacerdotisa da verdade, leitura profunda para revelar padrões ocultos, romper ilusões e trazer clareza em decisões importantes.Para quem está pronta para ouvir o que precisa, não apenas o que quer. (pergunta avulsa + 30$ cada)',
+    duracao: 'Duração: 35min.',
+    imagemUrl: '/icons/icon_test_3.png',
+    alt: 'Leitura de Verdade',
+  },
+  {
+    titulo: 'Leitura da Vida',
+    preco: 'R$ 330,00',
+    descricao: `Sessão destinada ao autodesenvolvimento e aprofundamento pessoal.
+ Vamos à raiz da situação através da Mandala das 12 Áreas da Vida pode fazer +3 perguntas (avulsa + 30$ cada)
+✨ Envio de Reiki incluso
+ ✨ Conselho  das cartas no inicio e final
+ Atendimento via áudio ou chamada de vídeo`,
+    duracao: 'Duração: 1h 30min',
+    imagemUrl: '/icons/icon_test_5.png',
+    alt: 'Leitura da Vida',
+  },
+  {
+    titulo: 'Reiki - 2 sessões online',
+    preco: 'R$ 200,00',
+    descricao: 'Reiki com Cristais e conselho do tarot.',
+    duracao: 'Duração: 25min.',
+    imagemUrl: '/icons/icon_test_2.png',
+    alt: 'Reiki',
+  },
+]
+
+const terapiasPresenciais = [
+  {
+    titulo: 'Tarot + Reiki com Cristais',
+    preco: 'R$ 330,00',
+    duracao: 'Duração: 1h.',
+    imagemUrl: '/icons/icon_test_1.png',
+    alt: 'Tarot + Reiki com Cristais'
+  },
+  {
+    titulo: 'Mapa + Reiki + Tarot',
+    preco: 'R$ 480,00',
+    duracao: 'Duração: 2h.',
+    imagemUrl: '/icons/icon_test_2.png',
+    alt: 'Mapa + Reiki + Tarot',
+  }
 ]
 
 const servicosBeleza = [
@@ -107,7 +127,7 @@ const servicosBeleza = [
   },
 ]
 
-const categories = ['Terapias Holísticas', 'Serviços de Beleza']
+const categories = ['Terapias Holísticas', 'Terapias Energéticas Presenciais', 'Beleza & Autocuidado']
 
 const navLinks = [
   { name: 'A MARI Brañdz', href: '/mari-brandz' },
@@ -181,8 +201,8 @@ const dadosAtendimentoSobre = {
 }
 
 const servicos = ['Mapa Astral', 'Reiki', 'Tarot', 'Manicure', 'Pedicure']
-const horariosPadrao = [ '08:00', '09:00', '10:00', '15:00', '16:00', '17:00' ]
-const horariosBeleza = [ '08:00', '09:00', '10:00', '15:00', '16:00', '17:00' ]
+const horariosPadrao = [ '09:00', '10:00', '11:00', '17:00', '18:00', '19:00', '20:00' ]
+const horariosBeleza = [ '09:00', '10:00', '11:00', '17:00', '18:00', '19:00', '20:00' ]
 
-export { categories, dadosAtendimento, dadosAtendimentosArray, dadosAtendimentoSobre, dadosMapa, dadosReiki, dadosTarot, horariosBeleza, horariosPadrao, navLinks, servicos, servicosBeleza, terapiasHolisticas }
+export { categories, dadosAtendimento, dadosAtendimentosArray, dadosAtendimentoSobre, dadosMapa, dadosReiki, dadosTarot, horariosBeleza, horariosPadrao, navLinks, servicos, servicosBeleza, terapiasHolisticas, terapiasPresenciais }
 
