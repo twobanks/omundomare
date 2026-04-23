@@ -1,6 +1,5 @@
-import React from 'react'
-import { FaCalendarAlt, FaClock, FaWhatsapp } from 'react-icons/fa' 
 import { WHATSAPP } from '@/utils/const'
+import { FaCalendarAlt, FaClock, FaWhatsapp } from 'react-icons/fa'
 
 export default function AtendimentoInfoCard() {
   const mensagemPadrao = 'Olá! Gostaria de mais informações sobre os atendimentos.'
@@ -20,21 +19,14 @@ export default function AtendimentoInfoCard() {
           <div className="flex items-start space-x-3">
             <FaCalendarAlt className="mt-1 h-6 w-6 text-brand-brown" />
             <div>
-              <p className="text-lg font-bold text-brand-text">Segunda-Quarta-Sexta</p>
-              <p className="ml-2 text-md text-brand-text-muted">Das 10h às 15h</p>
-            </div>
-          </div>
-          <div className="flex items-start space-x-3">
-            <FaCalendarAlt className="mt-1 h-6 w-6 text-brand-brown" />
-            <div>
-              <p className="text-lg font-bold text-brand-text">Terça-Quinta</p>
-              <p className="ml-2 text-md text-brand-text-muted">Das 17h às 22h</p>
+              <p className="text-lg font-bold text-brand-text">Segunda a Sexta</p>
+              <p className="ml-2 text-md text-brand-text-muted">Das 08h às 12h</p>
             </div>
           </div>
           <div className="flex items-start space-x-3">
             <FaClock className="mt-1 h-6 w-6 text-brand-brown" />
             <div>
-              <p className="text-lg font-bold text-brand-text">PLANTÃO FDS</p>
+              <p className="text-lg font-bold text-brand-text">Tarde/Noite ou Finais de Semana</p>
               <p className="ml-2 text-md text-brand-text-muted">
                 (consultar disponibilidade)
               </p>

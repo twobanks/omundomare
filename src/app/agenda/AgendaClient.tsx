@@ -107,7 +107,13 @@ Aguardo sua confirmação! `;
               <label className="block text-lg font-serif font-bold text-brand-text mb-2">
                 3. Escolha o Horário
               </label>
-              <div className="grid grid-cols-3 gap-2">
+              <div>
+                <div>
+                  <span>Segunda a sexta, das 8h às 12h.</span>
+                </div>
+                <i className='text-sm'>Períodos da tarde, noite, feriados e finais de semana disponíveis sob consulta e agendamento prévio</i>
+              </div>
+              <div className="grid grid-cols-3 gap-2 mt-4">
                 {!data ? (
                   <p className="text-brand-text-muted text-sm col-span-3">
                     Selecione uma data para ver os horários.
