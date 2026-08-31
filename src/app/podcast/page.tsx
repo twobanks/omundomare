@@ -1,4 +1,5 @@
 export const dynamic = 'force-dynamic';
+
 import HeadSection from '@/components/HeadSection';
 import { SpotifyEpisode } from '@/utils/types';
 import { Metadata } from 'next';
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
 async function getSpotifyAccessToken() {
   const client_id = process.env.SPOTIFY_CLIENT_ID
   const client_secret = process.env.SPOTIFY_CLIENT_SECRET
+  
   const basicAuth = Buffer.from(`${client_id}:${client_secret}`).toString('base64')
+  
+  // URL OFICIAL para obter o token do Spotify
   const res = await fetch('https://accounts.spotify.com/api/token', {
     method: 'POST',
     headers: {
@@ -22,9 +26,11 @@ async function getSpotifyAccessToken() {
     body: 'grant_type=client_credentials',
     cache: 'no-store',
   })
+  
   if (!res.ok) {
-    throw new Error('Falha ao autenticar com o Spotify')
+    throw new Error(`Falha ao autenticar com o Spotify: ${res.statusText}`)
   }
+  
   const data = await res.json()
   return data.access_token as string
 }
@@ -34,18 +40,25 @@ async function getPodcastEpisodes() {
     const accessToken = await getSpotifyAccessToken()
     const SHOW_ID = process.env.SPOTIFY_SHOW_ID
     const maxResults = 30 
+    
+    // URL OFICIAL da API e sintaxe correta da variável ${SHOW_ID}
     const URL = `https://api.spotify.com/v1/shows/${SHOW_ID}/episodes?limit=${maxResults}&market=BR`
+    
     const res = await fetch(URL, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
+      // Revalida a cada 1 hora
       next: { revalidate: 3600 },
     })
+    
     if (!res.ok) {
-      throw new Error(`Falha ao buscar episódios: ${res.statusText}`)
+      throw new Error(`Falha ao buscar episódios: ${res.status} - ${res.statusText}`)
     }
+    
     const data = await res.json()
     return data.items as SpotifyEpisode[]
+    
   } catch (error) {
     console.error(error)
     return [] 
@@ -54,6 +67,8 @@ async function getPodcastEpisodes() {
 
 export default async function PodcastPage() {
   const episodes = await getPodcastEpisodes()
+  console.log('Episódios carregados:', episodes)
+  
   return (
     <>
       <HeadSection image="/images/bg-hero.jpg" titulo='Entregando o Ouro' />
@@ -74,7 +89,13 @@ export default async function PodcastPage() {
                   className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-brand-white shadow-lg transition-all duration-300 hover:shadow-2xl"
                 >
                   <div className="relative h-64 w-full">
-                    <Image src={episode.images[0].url}  alt={episode.name} layout="fill" objectFit="cover" />
+                    {/* Sintaxe atualizada do Image no Next.js */}
+                    <Image 
+                      src={episode.images[0].url}  
+                      alt={episode.name} 
+                      fill 
+                      className="object-cover" 
+                    />
                   </div>
                   
                   <div className="flex flex-1 flex-col p-6">
